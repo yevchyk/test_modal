@@ -1,0 +1,11 @@
+@import "variables";
+
+body {
+  margin: 0;
+  background: $colorBg;
+  color: var(--color-font-main);
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
