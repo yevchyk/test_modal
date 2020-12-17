@@ -1,0 +1,40 @@
+@import "../../styles/mixins";
+
+.card {
+  height: 256px;
+  max-width: 362px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 32px;
+  margin: auto;
+  margin-top: 20px;
+  transition: 0.6s;
+  &:hover {
+    box-shadow: 24px 24px 40px rgba(75, 207, 160, 0.08);
+  }
+}
+
+.category {
+  @include category;
+}
+
+.dolar {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  margin-right: 4px;
+  transform: translateY(-16px);
+  display: inline-block;
+}
+
+.price {
+  @include price;
+}
+
+.productName {
+  @include productName;
+}
+
+.button {
+  margin-top: 16px;
+}

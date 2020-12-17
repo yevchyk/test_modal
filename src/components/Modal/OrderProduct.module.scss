@@ -1,0 +1,28 @@
+@import "../../styles/mixins";
+
+.container {
+  text-align: center
+}
+
+.category {
+  @include category;
+  margin: 0;
+}
+
+.dolar {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  margin-right: 4px;
+  transform: translateY(-16px);
+  display: inline-block;
+}
+
+.price {
+  @include price;
+}
+
+.productName {
+  @include productName;
+  margin-bottom: 8px;
+}

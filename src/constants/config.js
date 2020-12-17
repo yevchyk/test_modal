@@ -1,0 +1,1 @@
+export const API_PATH = 'https://run.mocky.io'

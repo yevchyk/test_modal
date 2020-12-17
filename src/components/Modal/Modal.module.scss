@@ -1,0 +1,23 @@
+.wrap_modal {
+  max-width: 384px;
+}
+
+.close {
+  margin-left: auto;
+  margin-top: -10px;
+  margin-right: -10px;
+  position: absolute;
+  right: 0;
+  background-color: #F2F2F2;
+  padding: 10px;
+  transition: 0.4s;
+  border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+  }
+}
+
+.content {
+  padding: 48px;
+}

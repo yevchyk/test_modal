@@ -1,0 +1,37 @@
+.button {
+  padding: 16px;
+  display: grid;
+  width: 100%;
+  text-align: center;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.buttonFilled {
+  box-sizing: border-box;
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  flex-direction: row;
+  align-items: center;
+  color: #FFFFFF;
+  background: #4BCFA0;
+}
+
+.buttonOutlined {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  flex-direction: row;
+  align-items: center;
+  color: #4BCFA0;
+  &:hover {
+    color: #FFFFFF;
+    background: #4BCFA0;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+}

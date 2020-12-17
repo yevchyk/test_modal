@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { API_PATH } from '../constants/config'
-import Cookies from 'js-cookie'
 
 // configure base url
 const instance = axios.create({
@@ -13,11 +12,11 @@ const instance = axios.create({
 });
 
 // intercept requests and add authorization token
-instance.interceptors.request.use((config) => {
-  const token = Cookies.get('token');
-  config.headers.authorization = `Bearer =${token}`;
-  return config;
-});
+// instance.interceptors.request.use((config) => {
+//   const token = Cookies.get('token');
+//   config.headers.authorization = `Bearer =${token}`;
+//   return config;
+// });
 
 
 // intercept response and reload page if request error
