@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import {orderProduct} from '../../actions/products';
 import css from './OrderProduct.module.scss';
-import TextInput from '../TextInput'
+import TextInput from '../TextInput';
 import Button from '../Button';
-import { validateName, validateNumber } from '../../helpers/serviceFunctions'
+import {useDispatch} from 'react-redux'
+import { validateName, validateNumber } from '../../helpers/serviceFunctions';
 
 function OrderProduct({ product }) {
+  const dispatch = useDispatch()
   const [value, setValue] = useState({
     name: '',
     number: '',
@@ -28,6 +31,7 @@ function OrderProduct({ product }) {
     if (Object.values(validate).some(item => item.status === 'error')) {
       console.error(value);
     }else {
+      dispatch(orderProduct(value))
       console.log(value)
     }
   }

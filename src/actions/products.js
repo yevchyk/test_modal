@@ -4,8 +4,15 @@ import {
 import instance from '../api/axios';
 
 export const getProducts = () => async dispatch => {
-  return instance.get('v3/b7d36eea-0b3f-414a-ba44-711b5f5e528e').then(res => {
+  return instance.get('/').then(res => {
     dispatch(setProduct(res.data));
+    return res.data
+  })
+};
+
+export const orderProduct = (data) => async dispatch => {
+  return instance.post('/', JSON.stringify(data)).then(res => {
+    console.log('resived data from server', res.data)
     return res.data
   })
 };

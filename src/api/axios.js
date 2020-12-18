@@ -3,7 +3,7 @@ import { API_PATH } from '../constants/config'
 
 // configure base url
 const instance = axios.create({
-  baseURL: `${API_PATH}/` ,
+  baseURL: `${API_PATH}` ,
   headers: {
     'Authorization': 'Basic ',
     'Content-Type': 'application/json',
