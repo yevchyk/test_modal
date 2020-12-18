@@ -18,7 +18,7 @@ const TextInput = ({clearAll, type='text', onChange, clearData, name, className,
         ref={inputRef}
         onChange={e=>
           type === 'number'
-          ? (Number.isInteger(e.target.value/1) && e.target.value.length < 13) && onChange(name, e.target.value)
+          ? (Number.isInteger(e.target.value/1) && e.target.value.length < 13) && onChange(name, e.target.value.split(' ').join(''))
           : onChange(name, e.target.value)}
           className={classnames(css.input, className, {
             [css.success]: status === 'success',
