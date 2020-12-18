@@ -9,6 +9,9 @@
   margin: auto;
   margin-top: 20px;
   transition: 0.6s;
+  @media only screen and (min-width: 990px)  and (max-width: 1200px) {
+    padding: 26px;
+  }
   &:hover {
     box-shadow: 24px 24px 40px rgba(75, 207, 160, 0.08);
   }
@@ -33,6 +36,7 @@
 
 .productName {
   @include productName;
+  white-space: nowrap;
 }
 
 .button {
