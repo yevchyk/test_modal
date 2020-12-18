@@ -5,7 +5,7 @@ import WrapModal from './components/Modal'
 
 function App() {
   return (
-    <div className={classnames("App", 'color-pattern-1')}>
+    <div className={classnames("App")}>
       <main>
         <Content>
           <Products/>

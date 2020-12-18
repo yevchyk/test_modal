@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap';
 import {setModal} from '../../actions/tools'
 import OrderProduct from './OrderProduct'
 import { connect } from 'react-redux';
-import close from '../../icons/close.svg'
+import CloseIcone from '../../icons/CloseIcone'
 import css from './Modal.module.scss'
 
 function WrapModal({dispatch, variant, display}) {
@@ -28,7 +28,7 @@ function WrapModal({dispatch, variant, display}) {
         dialogClassName={css.wrap_modal}
         onHide={handleClose}>
             <div className={css.close} onClick={handleClose}>
-              <img src={close} className="App-close" alt="close" />
+              <CloseIcone className="App-close"/>
             </div>
             <div className={css.content}>
               {

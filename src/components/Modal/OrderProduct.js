@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import css from './OrderProduct.module.scss';
 import TextInput from '../TextInput'
 import Button from '../Button';
+import { validateName, validateNumber } from '../../helpers/serviceFunctions'
 
 function OrderProduct({ product }) {
   const [value, setValue] = useState({
@@ -10,16 +11,66 @@ function OrderProduct({ product }) {
     number: '',
   })
   
-  const [validate, setvalidate] = useState()
+  const [validate, setValidate] = useState({
+    name: {
+      errorMessage: '',
+      status: 'usual'
+    },
+    number: {
+      errorMessage: '',
+      status: 'usual'
+    },
+  })
 
   function handleSendProduct () {
-    console.log(value)
+    setValidatedNumber()
+    setValidatedName()
+    if (Object.values(validate).some(item => item.status === 'error')) {
+      console.error(value);
+    }else {
+      console.log(value)
+    }
   }
 
   function onChangeValue(key, newValue) {
     setValue({
       ...value,
       [key]: newValue,
+    })
+    setValidate({
+      ...validate,
+      [key]: {
+        errorMessage: '',
+        status: 'usual'
+      }
+    })
+  }
+
+  function setValidatedNumber() {
+    setValidate({
+      ...validate,
+      number: validateNumber(value.number)
+    })
+  }
+
+  function setValidatedName() {
+    setValidate({
+      ...validate,
+      name: validateName(value.name)
+    })
+  }
+
+  function clearData(key) {
+    setValue({
+      ...value,
+      [key]: '',
+    })
+    setValidate({
+      ...validate,
+      [key]: {
+        errorMessage: '',
+        status: 'usual'
+      },
     })
   }
 
@@ -28,9 +79,24 @@ function OrderProduct({ product }) {
       <p className={css.category}>{product.category}</p>
       <p className={css.productName}>{product.name}</p>
       <div className={css.price}><span className={css.dolar}>$ </span>{product.price}</div>
-      <TextInput placeholder='Name' value={value.name} onChange={onChangeValue} name='name'/>
-      <TextInput type='number' placeholder='Number' value={value.number} onChange={onChangeValue} name='number'/>
-      <Button handleClick={e=> handleSendProduct()} label='order' btnStyle='withArrow' className={css.button}/>
+      <TextInput 
+        placeholder='Name'
+        value={value.name}
+        onChange={onChangeValue}
+        clearData={clearData}
+        onBlur={setValidatedName}
+        name='name'
+        {...validate.name}/>
+      <TextInput 
+        type='number'
+        placeholder='Number'
+        value={value.number}
+        clearData={clearData}
+        onChange={onChangeValue}
+        onBlur={setValidatedNumber}
+        name='number'
+        {...validate.number}/>
+      <Button handleClick={handleSendProduct} label='order' btnStyle='withArrow' className={css.button}/>
     </div>
   );
 }
