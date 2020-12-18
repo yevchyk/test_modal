@@ -1,6 +1,7 @@
+@import "../../styles/variables";
+
 .button {
   padding: 16px;
-  display: grid;
   width: 100%;
   text-align: center;
   transition-duration: 0.4s;
@@ -10,13 +11,38 @@
 .buttonFilled {
   box-sizing: border-box;
   border-radius: 16px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  align-items: center;
+  color: var(--color-buttons-secondary);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var( --color-buttons-main);
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.withArrow {
+  box-sizing: border-box;
+  border-radius: 16px;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
-  flex-direction: row;
   align-items: center;
-  color: #FFFFFF;
-  background: #4BCFA0;
+  color: var(--color-buttons-secondary);
+  background: var( --color-buttons-main);
+}
+
+.icon {
+  width: 0;
+  margin-left: 0px;
+  transition: 0.4s;
+  :hover > & {
+    width: 20px;
+    margin-left: 10px;
+    display: inline;
+  }
 }
 
 .buttonOutlined {
@@ -26,12 +52,11 @@
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
-  flex-direction: row;
   align-items: center;
-  color: #4BCFA0;
+  color: var(--color-buttons-main);
   &:hover {
-    color: #FFFFFF;
-    background: #4BCFA0;
+    color: var(--color-buttons-secondary);
+    background: var(--color-buttons-main);
     border: 1px solid rgba(0, 0, 0, 0);
   }
 }

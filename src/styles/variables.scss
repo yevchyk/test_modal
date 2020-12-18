@@ -1,14 +1,12 @@
 // color themes
 $colorBg: #F2F2F2;
-$colorMain: #4BCFA0;
-$colorMainCard: #fff;
-$colorMainAlarm: #E43F3F;
 
 :root {
   .color-pattern-1 {
     --color-font-main: #000000;
-    --color-highlight-buttons: #ff5530;
-    --color-highlight-buttons-dark: #e64d2b;
+    --color-buttons-main: #4BCFA0;
+    --color-buttons-secondary: #FFFFFF;
+    --color-highlight-errors: #E43F3F;
   }
 }
 

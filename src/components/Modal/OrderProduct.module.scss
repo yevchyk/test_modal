@@ -20,9 +20,14 @@
 
 .price {
   @include price;
+  margin-bottom: 12px
 }
 
 .productName {
   @include productName;
   margin-bottom: 8px;
+}
+
+.button {
+  margin-top: 24px;
 }

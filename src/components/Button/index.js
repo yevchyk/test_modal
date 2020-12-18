@@ -1,10 +1,11 @@
 import React from 'react'
 import classnames from 'classnames'
+import arrow from '../../icons/arrow.svg'
 import css from './Button.module.scss'
 
 const Button = ({
   className,
-  btnStyle = 'outlined',
+  btnStyle = 'buttonOutlined',
   label = '',
   handleClick,
 }) => {
@@ -12,16 +13,18 @@ const Button = ({
   return (
     <div
       className={classnames(css.button, className, {
-        [css.buttonOutlined]: btnStyle === 'outlined',
-        [css.buttonFilled]: btnStyle === 'filled',
+        [css.buttonOutlined]: btnStyle === 'buttonOutlined',
+        [css.buttonFilled]: btnStyle === 'buttonFilled',
         [css.withArrow]: btnStyle === 'withArrow'
       })}
-      onClick={handleClick}
-    >
-      { label }
-      {/* {btnStyle !== 'filled' &&
-        <IconArrowRight className={classnames(css.icon, iconClassname)} />
-      } */}
+      onClick={handleClick}>
+          { label }
+          {btnStyle === 'withArrow' &&
+            <img
+              src={arrow}
+              className={classnames(css.icon)}
+              alt="arrow"/>
+          }
     </div>
   )
 }
