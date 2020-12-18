@@ -12,7 +12,7 @@ export const getProducts = () => async dispatch => {
 
 export const orderProduct = (data) => async dispatch => {
   return instance.post('/', JSON.stringify(data)).then(res => {
-    console.log('resived data from server', res.data)
+    console.log('data from server:', res.data)
     return res.data
   })
 };

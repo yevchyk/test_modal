@@ -26,8 +26,11 @@ function OrderProduct({ product }) {
   })
 
   function handleSendProduct () {
-    setValidatedNumber()
-    setValidatedName()
+    setValidate({
+      ...validate,
+      name: validateName(value.name),
+      number: validateNumber(value.number)
+    })
     if (Object.values(validate).some(item => item.status === 'error')) {
       console.error(value);
     }else {
